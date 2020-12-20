@@ -1,6 +1,8 @@
 import requests
 from art import *
 
+divider = "-------------------------------------------------------"
+
 def welcome():
     """
     Prints the entry banner for the tool and url global var
@@ -19,7 +21,7 @@ def discovery_version():
     discovery the wordpress version by the generator line of the source code
     :return: if the generator line is visible or not
     """
-    print("-------------------------------------------------------")
+    print(divider)
     source_code = requests.get(url).text
     generator = source_code.find("generator")
 
@@ -35,7 +37,7 @@ def discovery_version():
             return False
         else:
             print("your generator line is hidden. well done!")
-    print("-------------------------------------------------------")
+    print(divider)
 
 
 def https_and_hsts():
@@ -56,7 +58,7 @@ def https_and_hsts():
             print("Your website uses https and hsts. very good!")
     else:
         print("Your website not uses https. it's very bad!")
-    print("-------------------------------------------------------")
+    print(divider)
 
 
 def search_important_headers():
@@ -75,7 +77,7 @@ def search_important_headers():
         print("You need to define the following headers: {0}".format(list_headers_not_defined))
     else:
         print("All headers are defined. very good work!")
-    print("-------------------------------------------------------")
+    print(divider)
 
 
 def discovery_admin_panel():
@@ -88,7 +90,7 @@ def discovery_admin_panel():
         print("Your admin panel is visible. it's bad!")
     else:
         print("Your admin panel is hidden. Well done!")
-    print("-------------------------------------------------------")
+    print(divider)
 
 
 def discovery_wordpress_with_robots_file():
@@ -103,7 +105,7 @@ def discovery_wordpress_with_robots_file():
             print("The robots.txt file reveals that your system is wordpress")
         else:
             print("The robots.txt file reveals that your system is wordpress")
-    print("-------------------------------------------------------")
+    print(divider)
     print("")
 
 
@@ -130,7 +132,7 @@ def discovery_usernames_with_author_query():
             print("Excellent! Author query blocked!")
             break
         print("The author query was not blocked. Usernames found: " + "".join(list_of_users))
-    print("-------------------------------------------------------")
+    print(divider)
 
 
 def discovery_users_with_wp_json():
@@ -153,7 +155,7 @@ def discovery_users_with_wp_json():
         print("The wp-json is not blocked. Usernames found: {0}".format("".join(list_of_users)))
     else:
         print("The wp-json has been blocked. good work!")
-    print("-------------------------------------------------------")
+    print(divider)
 
 
 def checker_xmlrpc():
@@ -166,7 +168,7 @@ def checker_xmlrpc():
         print("xml-rpc is not disabled. it's bad!")
     else:
         print("xml-rpc is disabled. well done!")
-    print("-------------------------------------------------------")
+    print(divider)
 
 
 def find_exposed_folders():
@@ -183,7 +185,7 @@ def find_exposed_folders():
         print("The folders found: {0}".format("".join(list_of_exposed_folders)) + ". it's bad!")
     else:
         print("No exposed folders found. good work!")
-    print("-------------------------------------------------------")
+    print(divider)
 
 
 def discovery_plugins():
@@ -230,7 +232,7 @@ def discovery_plugins():
                 print("{0}, version {1}".format(plugin, output[find_version_one - 2:find_version_two + 2]))
     else:
         print("We are sorry, but we were unable to identify the system as a wordpress system")
-    print("-------------------------------------------------------")
+    print(divider)
     print("finish!")
 
    

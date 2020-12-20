@@ -16,5 +16,5 @@ $ cd wordpress-security-scan
 $ pip install -r requirements.txt
 
 # run the script
-$ python wordpress-scan.py 
+$ python wordpress_scan.py 
 ```

@@ -231,7 +231,7 @@ def discovery_plugins():
                 find_version_two = output.rfind(".")
                 print("{0}, version {1}".format(plugin, output[find_version_one - 2:find_version_two + 2]))
     else:
-        print("We are sorry, but we were unable to identify the system as a wordpress system")
+        print("We're sorry, but the website does not use the plugins folder for storing plugins and we were unable to identify plugins")
     print(divider)
     print("finish!")
 
